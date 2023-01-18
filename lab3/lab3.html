@@ -13,10 +13,11 @@
         let errorUl = document.createElement("ul");
 
         document.addEventListener("DOMContentLoaded", () => {
-            let form = document.getElementById("createAccountForm");
-            let email = document.getElementById("email");
-            let password1 = document.getElementById("password1");
-            let password2 = document.getElementById("password2");
+            let form = document.querySelector("#createAccountForm");
+            let email = document.querySelector("#email");
+            let password1 = document.querySelector("#password1");
+            let password2 = document.querySelector("#password2");
+
 
             form.addEventListener("submit", (e) => {
                 e.preventDefault();
