@@ -20,7 +20,7 @@
                 let a = document.createElement("a");
                 h2s[i].id = h2s[i].innerText;
                 a.href = "#" + h2s[i].id;
-                a.innerHTML = h2s[i].innerHTML;
+                a.innerHTML = h2s[i].innerText;
                 li.appendChild(a);
                 ul.appendChild(li);
             }
