@@ -27,7 +27,7 @@
 
             for (const section of sections) {
                 // add ids to the sections 
-                section.id = section.querySelector("h1").innerText.toLowerCase();
+                section.id = section.querySelector("h1").innerText;
                 // Hide the sections
                 section.style.display = "none";
                 // Create a list item for each section
@@ -39,7 +39,7 @@
                         section.style.display = "none";
                     }
                     // Show the section that was clicked
-                    document.getElementById(li.innerHTML.toLowerCase()).style.display = "block";
+                    document.getElementById(li.innerHTML).style.display = "block";
                 });
                 ul.appendChild(li);
             }
