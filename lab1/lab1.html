@@ -12,7 +12,7 @@
 
         document.addEventListener("DOMContentLoaded", function(event) {
             let h2s = document.querySelectorAll("h2");
-            let toc = document.getElementById("tableOfContents");
+            let toc = document.querySelector("#tableOfContents");
             let ul = document.createElement("ul");
 
             for (let i = 0; i < h2s.length; i++) {
