@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 - Tabs</title>
+    <style>
+        section {
+            background-color: silver;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 5px;
+        }
+        
+        section h1 {
+            margin-top: 0;
+        }
+    </style>
+    <script>
+        // Write your JavaScript code here.
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let sections = document.querySelectorAll("section");
+            let sectionDiv = document.getElementById("sections");
+            let ul = document.createElement("ul");
+
+            for (const section of sections) {
+                // add ids to the sections 
+                section.id = section.querySelector("h1").innerHTML.toLowerCase();
+                // Hide the sections
+                section.style.display = "none";
+                // Create a list item for each section
+                let li = document.createElement("li");
+                li.innerHTML = section.querySelector("h1").innerHTML;
+                li.addEventListener("click", () => {
+                    // Hide all sections
+                    for (const section of sections) {
+                        section.style.display = "none";
+                    }
+                    // Show the section that was clicked
+                    document.getElementById(li.innerHTML.toLowerCase()).style.display = "block";
+                });
+                ul.appendChild(li);
+            }
+
+            // Append the ul before the first section
+            sectionDiv.insertBefore(ul, sections[0]);
+            // Show the first section
+            sections[0].style.display = "block";
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="sections">
+
+        <section>
+            <h1>Create account</h1>
+            <p>To use our service you first need to create an account. After you have created an account you can login to it and use our service on any computer with a web browser.</p>
+            <form>
+                <div>Username: <input type="text" name="username"></div>
+                <div>Password: <input type="password" name="password"></div>
+                <input type="submit" value="Create account">
+            </form>
+        </section>
+
+        <section>
+            <h1>Sign in</h1>
+            <p>To sign in, enter the username and password you entered when you created the account.</p>
+            <form>
+                <div>Username: <input type="text" name="username"></div>
+                <div>Password: <input type="password" name="password"></div>
+                <input type="submit" value="Sign in">
+            </form>
+        </section>
+
+        <section>
+            <h1>Subscribe</h1>
+            <p>Do you just want to be notified when something new has happened? Then let us know your email and we will send you a message as soon as something interesting has happened.</p>
+            <form>
+                <div>Email: <input type="email" name="email"></div>
+                <input type="submit" value="Subscribe">
+            </form>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
