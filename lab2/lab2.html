@@ -15,12 +15,13 @@
         let previousOperations = [];
 
         document.addEventListener("DOMContentLoaded", () => {
-            let res = document.getElementById("result");
-            let op1 = document.getElementById("operand1");
-            let op2 = document.getElementById("operand2");
-            let op = document.getElementById("operation");
-            let form = document.getElementById("calculatorForm");
+            let res = document.querySelector("#result");
+            let op1 = document.querySelector("#operand1");
+            let op2 = document.querySelector("#operand2");
+            let op = document.querySelector("#operation");
+            let form = document.querySelector("#calculatorForm");
             let list = document.createElement("ul");
+
 
             form.addEventListener("submit", (e) => {
                 list.innerHTML = "";
