@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 - Validating Forms</title>
+    <script>
+        // Write your JavaScript code here.
+        // Display the error messages wherever you think it makes most sense.
+
+        let errorMessages = [];
+        let errorUl = document.createElement("ul");
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let form = document.getElementById("createAccountForm");
+            let email = document.getElementById("email");
+            let password1 = document.getElementById("password1");
+            let password2 = document.getElementById("password2");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                errorMessages = [];
+                errorUl.innerHTML = "";
+
+                // Check if email contains @
+                if (!email.value.includes("@")) {
+                    errorMessages.push("Email must contain @");
+                }
+
+                // Check if password is at least 8 characters long
+                if (password1.value.length < 8) {
+                    errorMessages.push("Password must be at least 8 characters long");
+                }
+
+                // Check if password1 and password2 are the same
+                if (password1.value !== password2.value) {
+                    errorMessages.push("Passwords must be the same");
+                }
+
+                // Print error messages
+                errorMessages.forEach((message) => {
+                    let li = document.createElement("li");
+                    li.innerHTML = message;
+                    errorUl.appendChild(li);
+                });
+
+                if (errorMessages.length > 0) {
+                    form.appendChild(errorUl);
+                    e.preventDefault();
+                } else {
+                    form.submit();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1>Create account</h1>
+
+    <form id="createAccountForm" method="POST">
+
+        <div>Email: <input type="text" name="email" id="email"></div>
+
+        <div>Password: <input type="password" name="password1" id="password1"></div>
+
+        <div>Password (repeat): <input type="password" name="password2" id="password2"></div>
+
+        <input type="submit" value="Create account">
+
+    </form>
+
+</body>
+
+</html>
