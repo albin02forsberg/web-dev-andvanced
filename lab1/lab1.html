@@ -10,7 +10,7 @@
         // Want a harder challenge? Put <a> in <li> that leads to the <h2>.
         // Want a harder challenge? Add a button one can click to toggle the visibility of the table of contents.
 
-        document.addEventListener("DOMContentLoaded", function(event) {
+        document.addEventListener("DOMContentLoaded", () => {
             let h2s = document.querySelectorAll("h2");
             let toc = document.querySelector("#tableOfContents");
             let ul = document.createElement("ul");
@@ -29,7 +29,7 @@
             // Toggle button
             let button = document.createElement("button");
             button.innerHTML = "Toggle Table of Contents";
-            button.addEventListener("click", function() {
+            button.addEventListener("click", () => {
                 if (ul.style.display === "none") {
                     ul.style.display = "block";
                 } else {
