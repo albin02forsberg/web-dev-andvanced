@@ -32,7 +32,7 @@
                 section.style.display = "none";
                 // Create a list item for each section
                 let li = document.createElement("li");
-                li.innerHTML = section.querySelector("h1").innerText;
+                li.innerText = section.querySelector("h1").innerText;
                 li.addEventListener("click", () => {
                     // Hide all sections
                     for (const section of sections) {
