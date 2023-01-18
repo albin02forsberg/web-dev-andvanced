@@ -18,7 +18,7 @@
             for (let i = 0; i < h2s.length; i++) {
                 let li = document.createElement("li");
                 let a = document.createElement("a");
-                h2s[i].id = h2s[i].innerHTML;
+                h2s[i].id = h2s[i].innerText;
                 a.href = "#" + h2s[i].id;
                 a.innerHTML = h2s[i].innerHTML;
                 li.appendChild(a);
