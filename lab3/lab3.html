@@ -20,7 +20,6 @@
 
 
             form.addEventListener("submit", (e) => {
-                e.preventDefault();
                 errorMessages = [];
                 errorUl.innerHTML = "";
 
@@ -48,6 +47,7 @@
 
                 if (errorMessages.length > 0) {
                     form.appendChild(errorUl);
+                    e.preventDefault();
                 } else {
                     //form.submit();
                 }
